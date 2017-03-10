@@ -21,7 +21,7 @@ $('#autocomplete').autocomplete({
                 //приведем полученные данные к необходимому формату и передадим в
                 // предоставленную функцию response
                 response($.map(data, function (item) {
-                    if (matcher.test(item.City) || matcher.test(item.Id)) {
+                    if (matcher.test(item.City)) {
                         return {
                             label: item.Id,
                             value: item.City
@@ -90,11 +90,7 @@ $('#autocomplete').autocomplete({
             $(this).removeClass("message-error");
         }
     }
-}).data("ui-autocomplete")._renderItem = function( ul, item ) {
-        return $( "<li>" )
-            .append( $( "<div>" ).text( item.label + ' ' + item.value) )
-            .appendTo( ul );
-    };
+});
     var input_temp;
     $(function(){
         $("#autocomplete").focus(function(){    // получение фокуса текстовым полем

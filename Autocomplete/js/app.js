@@ -23,7 +23,7 @@ $('#autocomplete').autocomplete({
                 response($.map(data, function (item) {
                     if (matcher.test(item.City)) {
                         return {
-                            label: item.Id,
+                            label: item.City,
                             value: item.City
                         }
                     }
